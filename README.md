@@ -11,6 +11,7 @@ Export any block or section from your EDS project as an HTML Offer directly to A
 2. [Create and Deploy Adobe IO Actions](#step-2-create-and-deploy-adobe-io-actions)
 3. [Test Integration](#step-3-test-integration)
 4. [Create Sidekick Plugin for Unique ID Generation](#step-4-create-sidekick-plugin-for-unique-id-generation)
+5. [Develop Block, Section Selection and Export Dialog](#step-5-develop-block-section-selection-and-export-dialog)
 
 ## Developer Setup
 
@@ -41,6 +42,11 @@ Create a Sidekick plugin that allows authors to generate unique IDs for blocks a
 - Integrate with the export functionality
 
 **Need details?** → [Sidekick Plugin Implementation](#sidekick-plugin-implementation)
+
+### Step 5: Develop Block, Section Selection and Export Dialog
+Implement the user interface for authors to select exportable blocks/sections and create HTML offers. This includes the export dialog, block highlighting, and the complete export workflow.
+
+**Need details?** → [Export Dialog](#export-dialog) and [Content Highlighting](#content-highlighting)
 
 ## Content Author Flow
 
