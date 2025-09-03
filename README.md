@@ -24,17 +24,12 @@ Follow the [official Adobe Target API authentication guide](https://experiencele
 - Note your **Client ID** and **Client Secret**
 
 ### Step 2: Create and Deploy Adobe IO Actions
-```bash
-cd aio
-aio app deploy
-```
+Deploy the Adobe IO Runtime actions to handle authentication and offer export functionality.
 
 **Need details?** → [Adobe I/O Runtime Getting Started Guide](https://developer.adobe.com/runtime/docs/guides/getting-started/)
 
 ### Step 3: Test Integration
-```bash
-aio runtime action invoke sling-da/gettoken
-```
+Test that the Adobe IO Runtime actions are working correctly and can authenticate with Adobe Target.
 
 **Need details?** → [gettoken action](aio/actions/gettoken/index.js)
 
@@ -75,7 +70,7 @@ Authors can add a unique id to Block as a variant and a property section metadat
 ### Environment Configuration
 
 #### Required Environment Variables
-See the actual configuration in [app.config.yaml](aio/app.config.yaml) for the complete setup.
+• See the actual configuration in [app.config.yaml](aio/app.config.yaml) for the complete setup.
 
 
 
@@ -84,44 +79,45 @@ See the actual configuration in [app.config.yaml](aio/app.config.yaml) for the c
 
 
 #### Dependencies
-See the actual dependencies in [package.json](aio/package.json).
+• See the actual dependencies in [package.json](aio/package.json).
 
 #### Configuration File
-See the complete configuration in [app.config.yaml](aio/app.config.yaml).
+• See the complete configuration in [app.config.yaml](aio/app.config.yaml).
 
 ### Testing Your Integration
 
 #### Test Authentication
-See the main function in [gettoken action](aio/actions/gettoken/index.js) around lines 10-50 and the main function in [exportoffers action](aio/actions/exportoffers/index.js) around lines 20-60.
+• See the main function in [gettoken action](aio/actions/gettoken/index.js) around lines 10-50
+• See the main function in [exportoffers action](aio/actions/exportoffers/index.js) around lines 20-60
 
 #### Verify Deployment
-Use the Adobe IO CLI commands to verify your deployment is working correctly.
+• Use the Adobe IO CLI commands to verify your deployment is working correctly.
 
 
 
 ### Export Dialog
 
 #### HTML Structure
-See the complete HTML structure in [htmloffer.html](tools/htmloffer/htmloffer.html).
+• See the complete HTML structure in [htmloffer.html](tools/htmloffer/htmloffer.html).
 
 #### JavaScript Logic
-See the form submission handler and export logic in [htmloffer.js](tools/htmloffer/htmloffer.js) around lines 50-80.
+• See the form submission handler and export logic in [htmloffer.js](tools/htmloffer/htmloffer.js) around lines 50-80.
 
 ### Content Highlighting
 
 #### CSS for Exportable Blocks
-See the CSS styling in [htmloffer.css](tools/htmloffer/htmloffer.css).
+• See the CSS styling in [htmloffer.css](tools/htmloffer/htmloffer.css).
 
 #### JavaScript Highlighting
-See the `showBlocks` function and export button creation in [utils.js](eds/scripts/utils.js) around lines 900-950.
+• See the `showBlocks` function and export button creation in [utils.js](eds/scripts/utils.js) around lines 900-950.
 
 ### Event Rebinding System
 
 #### Automatic Event Rebinding
-See the `setupBlockObserver` function in [scripts.js](eds/scripts/scripts.js) around lines 780-800.
+• See the `setupBlockObserver` function in [scripts.js](eds/scripts/scripts.js) around lines 780-800.
 
 #### Example: Carousel Rebinding
-See the `rebindEvents` function in [carousel.js](eds/blocks/carousel/carousel.js) around lines 50-80.
+• See the `rebindEvents` function in [carousel.js](eds/blocks/carousel/carousel.js) around lines 50-80.
 
 
 
@@ -138,44 +134,16 @@ The plugin integrates with the existing `tools/htmloffer/` functionality and ext
 - Integrate with the export functionality
 
 ### Code Structure
-See the actual implementation in:
-- [properties.js](tools/properties/properties.js) - UUID generation around lines 25-35
-- [utils.js](eds/scripts/utils.js) - Fragment ID processing (lines 1010-1020) and export button creation (lines 900-950)
+• See the actual implementation in:
+  - [properties.js](tools/properties/properties.js) - UUID generation around lines 25-35
+  - [utils.js](eds/scripts/utils.js) - Fragment ID processing (lines 1010-1020) and export button creation (lines 900-950)
 
 ### Integration Points
 - **Properties Tool**: Extends existing `tools/properties/` functionality
 - **HTML Offer Tool**: Integrates with `tools/htmloffer/` for export workflow
 - **Sidekick**: Provides UI components for author interaction
 
-## Using HTML Offers in VEC Editor
 
-### Step 1: Access Adobe Target
-1. Log into Adobe Experience Cloud
-2. Navigate to Adobe Target
-3. Go to **Offers** > **Code Offers**
-
-### Step 2: Locate Your HTML Offers
-1. Your exported offers will appear in the **Code Offers** section
-2. Offers are named according to what you specified during export
-3. Each offer contains the HTML content from your blocks/sections
-
-### Step 3: Use in VEC Editor
-1. **Create Activity**: Go to **Activities** > **Create Activity**
-2. **Choose Activity Type**: Select your desired activity type (A/B Test, Experience Targeting, etc.)
-3. **Enter URL**: Specify the page where you want to test
-4. **Open VEC Editor**: Click **Next** to open the Visual Experience Composer
-5. **Apply HTML Offer**:
-   - Click on the element you want to replace
-   - Choose **Replace Content** action
-   - Select **HTML Offer**
-   - Choose your exported HTML offer
-6. **Save and Test**: Save your activity and start testing
-
-### Step 4: Targeting and Scheduling
-1. **Audience Targeting**: Define who should see the offer
-2. **Goals and Metrics**: Set up conversion tracking
-3. **Schedule**: Set start and end dates
-4. **Activate**: Launch your activity
 
 ## Troubleshooting
 
@@ -231,6 +199,38 @@ AIO_RUNTIME_NAMESPACE=your_runtime_namespace
 ADOBE_TARGET_TENANT=your_tenant_id
 ADOBE_TARGET_WORKSPACE_ID=your_workspace_id
 ```
+
+## Additional Information
+
+### Using HTML Offers in VEC Editor
+
+#### Step 1: Access Adobe Target
+1. Log into Adobe Experience Cloud
+2. Navigate to Adobe Target
+3. Go to **Offers** > **Code Offers**
+
+#### Step 2: Locate Your HTML Offers
+1. Your exported offers will appear in the **Code Offers** section
+2. Offers are named according to what you specified during export
+3. Each offer contains the HTML content from your blocks/sections
+
+#### Step 3: Use in VEC Editor
+1. **Create Activity**: Go to **Activities** > **Create Activity**
+2. **Choose Activity Type**: Select your desired activity type (A/B Test, Experience Targeting, etc.)
+3. **Enter URL**: Specify the page where you want to test
+4. **Open VEC Editor**: Click **Next** to open the Visual Experience Composer
+5. **Apply HTML Offer**:
+   - Click on the element you want to replace
+   - Choose **Replace Content** action
+   - Select **HTML Offer**
+   - Choose your exported HTML offer
+6. **Save and Test**: Save your activity and start testing
+
+#### Step 4: Targeting and Scheduling
+1. **Audience Targeting**: Define who should see the offer
+2. **Goals and Metrics**: Set up conversion tracking
+3. **Schedule**: Set start and end dates
+4. **Activate**: Launch your activity
 
 ## References
 
