@@ -1,0 +1,55 @@
+.game-finder.block {
+    background: initial;
+}
+
+.game-finder.block > div:not([id]) p {
+    display: none;
+}
+
+.game-finder.block #gmfinder-app {
+    z-index: 0;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.game-finder.block #gmfinder-app svg {
+    width: 15px;
+    height: 20px;
+}
+
+.game-finder.block #gmfinder-app .package-modal div:nth-child(6) button:has(span) {
+    color: var(--background-color);
+    background: var(--primary-button-color);
+    min-width: unset;
+    border: none;
+    border-radius: 1600px;
+    opacity: 1;
+    font-size: 1.125rem;
+    min-height: 50px;
+    align-content: center;
+    line-height: 1;
+    font-family: var(--body-font-family);
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 16px;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.game-finder.block #gmfinder-app .ykLwg {
+position: initial
+}
+
+.game-finder.block #gmfinder-app .gwxdjd {
+    margin-top: 10px;
+}
+
+.game-finder.block #gmfinder-app .iqyiwh { 
+    height: auto;
+}

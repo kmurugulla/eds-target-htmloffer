@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page not found</title>
+  <script type="text/javascript">
+    window.isErrorPage = true;
+    window.errorCode = '404';
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Page not found">
+  <script src="/eds/scripts/scripts.js" type="module" ></script>
+  <script type="module">
+    import { sampleRUM } from '/eds/scripts/aem.js';
+
+    window.addEventListener('load', () => {
+      if (document.referrer) {
+        const { origin, pathname } = new URL(document.referrer);
+        if (origin === window.location.origin) {
+          const backBtn = document.createElement('a');
+          backBtn.classList.add('button', 'error-button-back');
+          backBtn.href = pathname;
+          backBtn.textContent = 'Go back';
+          backBtn.title = 'Go back';
+          const btnContainer = document.querySelector('.button-container');
+          btnContainer.append(backBtn);
+        }
+      }
+      sampleRUM('404', { source: document.referrer });
+    });
+  </script>
+  <link rel="stylesheet" href="/eds/styles/styles.css">
+  <style>
+    header {
+      height: 58px !important;
+    }
+
+    main.error {
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+
+      .section {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 50%;
+      }
+       > div:first-child {
+          background-color: white;
+         width: 100%;
+        }
+
+        picture {
+
+          img {
+            object-fit: cover;
+            height: 100%;
+            aspect-ratio: 4/3;
+          }
+        }
+
+        .content {
+            text-align: center;
+
+          h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    main.error .error-number {
+      width: 100%;
+    }
+
+    header nav#nav[aria-expanded="true"] .nav-brand {
+      width: 100%;
+    }
+
+    main.error .error-number text {
+      font-family: var(--fixed-font-family);
+    }
+
+    @media (width >= 768px) {
+        main.error .section {
+            display: flex;
+
+            > div:first-child {
+            width: 50%;
+            }
+        }
+    }
+  </style>
+  <link rel="stylesheet" href="/eds/styles/lazy-styles.css">
+</head>
+
+<body>
+  <header></header>
+  <main class="error">
+    <div class="section">
+      <div>
+        <picture><img src="https://main--sling--aemsites.aem.live/eds/icons/application-assets/404-desktop.jpg" width="100%">
+        </picture></div>
+      <div class="content">
+        <h1>404</h1>
+      <h3 class="error-message">SOMETHING'S BROKE</h3>
+      <p class="button-container">
+        <a href="https://www.sling.com" class="button primary error-button-home">Home</a>
+      </p>
+      <p>
+        <a href="https://www.sling.com/latino-es" class="button primary error-button-home">Latino Entertainment</a>
+      </p>
+      <p class="button-container">
+        <a href="https://www.sling.com/international" class="button primary error-button-home">International Entertainment</a>
+      </p>
+        </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

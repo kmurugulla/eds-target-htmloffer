@@ -1,0 +1,9 @@
+.blog-breadcrumb-wrapper {
+    width: 100%;
+}
+
+@media (width >= 768px) {
+ .block.blog-breadcrumb {
+     padding-bottom: 24px;
+ }
+}

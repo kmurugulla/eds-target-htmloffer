@@ -1,0 +1,13 @@
+.hlx/*
+coverage/*
+logs/*
+node_modules/*
+package-lock.json
+
+helix-importer-ui
+.DS_Store
+*.bak
+.idea
+*.iml
+.cursor/*
+.vscode/*

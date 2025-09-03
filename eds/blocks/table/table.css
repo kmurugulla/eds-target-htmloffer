@@ -1,0 +1,274 @@
+/* table cell color overrides, same as columns.css */
+.table td {
+  &.bg-primary-light {
+    background: var(--primary-light);
+  }
+
+  &.bg-white {
+    background: var(--clr-white);
+  }
+
+  &.bg-dark-rock-candy {
+    background: var(--dark-rock-candy);
+    color: var(--clr-white);
+  }
+
+  &.bg-dark-tangerine {
+    background-color: var(--dark-tangerine);
+    color: var(--clr-white);
+  }
+
+  &.bg-primary-dark {
+    background: var(--primary-dark);
+    color: var(--clr-white);
+  }
+
+  &.bg-highlight-coal {
+    background: var(--highlight-coal);
+    color: var(--clr-white);
+  }
+
+  &.bg-blueberry {
+    background: var(--blueberry);
+    color: var(--clr-white);
+  }
+
+  &.bg-sling-blue {
+    background: var(--sling-blue);
+    color: var(--clr-white);
+  }
+
+  &.bg-accessible-blue {
+    background: var(--accessible-blue);
+    color: var(--clr-white);
+  }
+
+  &.bg-pearl {
+    background: var(--pearl);
+  }
+
+  &.bg-charcoal {
+    background: var(--charcoal);
+    color: var(--clr-white);
+  }
+
+  &.bg-smoke {
+    background: var(--smoke);
+    color: var(--clr-white);
+  }
+
+  &.bg-black {
+    background: var(--black);
+    color: var(--clr-white);
+  }
+
+  &.bg-cherry-red {
+    background: var(--cherry-red);
+    color: var(--clr-white);
+  }
+
+  &[class^="bg-"] { /* stylelint-disable no-descending-specificity */
+    padding-top: 12px;
+    padding-bottom: 12px;
+      width: calc(100% - 24px);
+      margin-left: auto;
+      margin-right: auto;
+
+      > .button-container {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+    }
+
+  &.bg-white, &.bg-primary-light, &.bg-mac-and-cheese, &.bg-pearl {
+    h1, h2, h3, h4, h5, h6, p, li {
+      color: inherit;
+    }
+
+    a:not(.button, .blue) {
+      color: var(--link-color);
+    }
+  }
+
+    a:not(.button, .blue, .black, .white) {
+      text-decoration: underline;
+    }
+  }
+
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    font-size: var(--body-font-size-xs);
+
+    th, td {
+      padding: 10px;
+    }
+
+    td p:last-child, tr p:last-child {
+      margin-bottom: 0;
+    }
+
+    thead tr {
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+
+  td:not([data-align="right"], [data-align="left"], [data-align="justify"], .align-right, .align-left) {
+    text-align: center;
+  }
+
+  td:not([data-align="right"], [data-align="left"], [data-align="justify"], .align-right, .align-left):first-child {
+    text-align: left;
+  }
+
+  th:not([data-align="right"], [data-align="left"], [data-align="justify"], .align-right, .align-left):first-child {
+    text-align: left;
+  }
+ }
+}
+
+.table-wrapper {
+  margin: 24px auto;
+}
+
+/* Full column-align (left, center, right) styles for up to 6 columns */
+.column-left-1 tr:not(.single-column-row) > *:first-child, 
+.column-left-2 table tr > *:nth-child(2), 
+.column-left-3 table tr > *:nth-child(3), 
+.column-left-4 table tr > *:nth-child(4), 
+.column-left-5 table tr > *:nth-child(5), 
+.column-left-6 table tr > *:nth-child(6) {
+  text-align: left;
+}
+
+.column-center-1 tr:not(.single-column-row) > *:first-child, 
+.column-center-2 table tr > *:nth-child(2), 
+.column-center-3 table tr > *:nth-child(3), 
+.column-center-4 table tr > *:nth-child(4), 
+.column-center-5 table tr > *:nth-child(5), 
+.column-center-6 table tr > *:nth-child(6) {
+  text-align: center;
+}
+
+.column-right-1 tr:not(.single-column-row) > *:first-child, 
+.column-right-2 table tr > *:nth-child(2), 
+.column-right-3 table tr > *:nth-child(3), 
+.column-right-4 table tr > *:nth-child(4), 
+.column-right-5 table tr > *:nth-child(5), 
+.column-right-6 table tr > *:nth-child(6) {
+  text-align: right;
+}
+
+/* bordered variant */
+.table.bordered table th,
+.table.bordered table td { /* stylelint-disable-line */
+  border: 1px solid;
+}
+
+.table:not(.playoffs, .schedule) table tbody tr {
+  border-bottom: 1px solid;
+}
+
+/* no header variant */
+.table.no-header table tbody tr {
+  border-top: 1px solid;
+}
+
+.schedule.table table thead tr {
+  background-color: rgb(0 30 120);
+  border-color: rgb(0 30 120);
+  color: rgb(255 208 60);
+}
+
+.playoffs.table table tbody tr td p a.button.text {
+  padding: 0;
+  display: inline;
+}
+
+.playoffs.table table thead tr {
+  background-color: var(--dark-rock-candy);
+  border-color: var(--dark-rock-candy);
+  color: var(--clr-white);
+}
+
+/* striped variant */
+.table.striped tbody tr:nth-child(odd) {
+  background-color: var(--light-grey-color);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule.table table .lightgrey {
+  background-color: var(--light-grey-color);
+}
+
+.schedule.table table .single-column-row {
+  background-color: var(--dark-color);
+  width: 100%;
+  text-align: center;
+}
+
+.playoffs.table table .single-column-row.lightgrey td, .schedule.table table .single-column-row.lightgrey td {
+  background-color: var(--dark-color);
+}
+
+.schedule.table p,
+.playoffs.table p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.blog-article > main div.section.table-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.playoffs.table,
+.schedule.table {
+  overflow-x: hidden;
+}
+
+.playoffs.table table,
+.schedule.table table {
+  table-layout: fixed;
+}
+
+@media (width >= 768px) {
+  .table table {
+    font-size: var(--body-font-size-s);
+  }
+
+  .blog-article > main div.section.table-container {
+    padding: unset;
+    width: unset;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .playoffs.table, .schedule.table{
+    margin-left: 8px;
+    margin-bottom: 48px;
+  }
+}
+
+@media (width >= 1024px) {
+  .blog-article > main div.section.table-container .table-wrapper {
+    max-width: 1168px;
+  }
+}
